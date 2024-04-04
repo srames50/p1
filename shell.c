@@ -1,4 +1,10 @@
 #include "shell.h"
+#include <stdlib.h>  //exit
+#include <stdio.h>   //perror
+#include <unistd.h>  //fork, pipe
+#include <sys/wait.h>   //wait
+
+const int BUF_SIZE = 4096; // constant variable
 
 int main(int argc, char **argv) {
   if (argc == 2 && equal(argv[1], "--interactive")) {
